@@ -1,3 +1,6 @@
+//Ahmad Rizki Maulana
+//121140105_RB
+
 let currentInput = '';
 
 function appendToDisplay(value) {
@@ -7,7 +10,7 @@ function appendToDisplay(value) {
 
 function appendOperator(operator) {
     if (currentInput.endsWith('%')) {
-        return; // Hindari menambahkan operator setelah persen ("%")
+        return; 
     }
 
     if (currentInput.length > 0 && '+-*/'.includes(currentInput[currentInput.length - 1])) {
@@ -19,10 +22,9 @@ function appendOperator(operator) {
 
 function appendDecimal(decimal) {
     if (currentInput.endsWith('%')) {
-        return; // Hindari menambahkan desimal setelah persen
+        return; 
     }
 
-    // Cek apakah ada desimal di input saat ini
     if (!currentInput.includes(decimal)) {
         currentInput += decimal;
     }
@@ -32,11 +34,7 @@ function appendDecimal(decimal) {
 function calculateResult() {
     try {
         let expression = currentInput;
-        
-        // Ganti tanda persen dengan perhitungan persen yang sesuai
         expression = expression.replace(/%/g, '*0.01');
-        
-        // Ubah koma (,) menjadi titik (.) untuk memastikan evaluasi angka desimal
         expression = expression.replace(/,/g, '.');
         
         currentInput = eval(expression);
