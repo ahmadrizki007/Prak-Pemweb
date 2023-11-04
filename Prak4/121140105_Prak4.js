@@ -1,6 +1,3 @@
-<!-- Ahmad Rizki Maulana -->
-<!-- 121140105_RB -->
-
 function hitungGanjilGenap(bilangan) {
     var jumlahGanjil = 0;
     var jumlahGenap = 0;
